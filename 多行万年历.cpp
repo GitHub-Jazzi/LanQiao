@@ -1,8 +1,9 @@
+//思路就是把输入的每一年存入数组中,再根据输入行数格式化输出
 #include <iostream>
 using namespace std;
-bool isrui(int );
-int week(int );
-int day(int month,int year);
+bool isrui(int );//判断是否为瑞年
+int week(int );//判断每年的第一天为周几
+int day(int month,int year);//判断这个月多少天
 int main(){
     int year,line;
     int date[12][42]={0};
@@ -11,12 +12,12 @@ int main(){
         for(int i=(start+=day(m,year))%7,sq=1;sq<=day(m+1,year);){
             date[m][i++]=sq++;
         }
-    }
+    }//把输入的年份所有天数存入数组
     for(int i=1;i<=12;i+=line){
         for(int n=0;(12-i>line)?(n<line):(n<12-i+1);n++){
             printf("%4s%4s%4s%4s%4s%4s%4s","SUN","MON","TU","WE","TH","FR","ST");
             cout<<"  ";
-        }
+        }//按需输出标题
         cout<<endl;
         for(int l=0;l<6;l++){
             for(int n=1;n<=line;n++){
@@ -30,7 +31,7 @@ int main(){
                 cout<<"  ";
             }
             cout<<endl;
-        }
+        }//按需输出格式化天数
     }
     return 0;
 }
