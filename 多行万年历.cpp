@@ -1,3 +1,4 @@
+//多行万年历
 //思路就是把输入的每一年存入数组中,再根据输入行数格式化输出
 #include <iostream>
 using namespace std;
